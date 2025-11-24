@@ -16,6 +16,8 @@ Eres la analista asignada a la unidad. Necesitas identificar todos los agentes a
 **Comando base:**
 ```sql
 SELECT * FROM agents;
+```
+
 Observa la estructura: columnas, tipos, valores nulos.
 
 Evalúa: ¿qué columna identifica unívocamente a cada agente? → agent_id
