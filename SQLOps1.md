@@ -102,11 +102,13 @@ ORDER BY rank DESC;
 ```
 
 🔹 Debrief del día
-✅ Entiendes SELECT básico
-✅ Sabes filtrar con WHERE
-✅ Puedes ordenar resultados
-✅ Insertas registros en logs
-✅ Puedes responder preguntas sorpresa
-¿Cuál fue la columna más crítica hoy y por qué?
 
-¿Qué errores podrían arruinar la misión si no los controlas?
+- ✅ Entiendes SELECT básico
+- ✅ Sabes filtrar con WHERE
+- ✅ Puedes ordenar resultados
+- ✅ Insertas registros en logs
+- ✅ Puedes responder preguntas sorpresa
+  
+- ¿Cuál fue la columna más crítica hoy y por qué?
+
+- ¿Qué errores podrían arruinar la misión si no los controlas?
