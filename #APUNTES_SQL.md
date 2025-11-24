@@ -1,9 +1,9 @@
-# 1) Objetivo y enfoque
+## 1) Objetivo y enfoque
 
 Objetivo: que puedas entender, escribir y optimizar consultas SQL en bases relacionales (PostgreSQL / MySQL) para pentesting, análisis de datos o backends.
 Enfoque: minimalismo militar — primero domina lo esencial, luego subes la dificultad. Mucha práctica real sobre un esquema de ejemplo.
 
-# 2) Conceptos básicos (vocabulario operativo)
+## 2) Conceptos básicos
 
 Base de datos (DB): contenedor de tablas.
 
@@ -25,7 +25,7 @@ DML: Data Manipulation Language — SELECT, INSERT, UPDATE, DELETE.
 
 ACID / Transacción: atomicidad, consistencia, aislamiento, durabilidad — BEGIN; COMMIT; ROLLBACK;.
 
-# 3) Esquema de ejemplo (usa esto para practicar)
+## 3) Esquema de ejemplo
 
 Imagina una DB de operaciones: operaciones con tablas: agents, missions, assets, logs.
 
@@ -79,7 +79,7 @@ CREATE TABLE logs (
   FOREIGN KEY (agent_id) REFERENCES agents(agent_id)
 );
 
-# 4) SELECT: la instrucción más vital
+## 4) SELECT: la instrucción más vital
 
 Sintaxis básica:
 
@@ -118,7 +118,7 @@ IN y BETWEEN:
 SELECT * FROM missions WHERE status IN ('active','planning');
 SELECT * FROM missions WHERE start_date BETWEEN '2025-01-01' AND '2025-12-31';
 
-5) Funciones agregadas y GROUP BY
+## 5) Funciones agregadas y GROUP BY
 
 COUNT(*), SUM(col), AVG(col), MIN(col), MAX(col).
 
@@ -140,7 +140,7 @@ FROM agents
 GROUP BY rank
 HAVING COUNT(*) >= 3;
 
-# 6) JOINs — unión entre tablas
+## 6) JOINs — unión entre tablas
 
 Tipos:
 
@@ -189,7 +189,7 @@ JOIN agents a ON ass.agent_id = a.agent_id
 JOIN missions m ON ass.mission_id = m.mission_id
 WHERE m.mission_id IN (SELECT mission_id FROM active_missions);
 
-# 8) INSERT / UPDATE / DELETE (manipulación)
+## 8) INSERT / UPDATE / DELETE (manipulación)
 
 Insertar:
 
@@ -215,7 +215,7 @@ DELETE FROM logs WHERE log_time < '2024-01-01';
 
 ⚠️ Siempre haz SELECT antes de un UPDATE o DELETE para validar afectación. Usa BEGIN; ... ROLLBACK; en pruebas.
 
-# 9) Transacciones y bloqueo
+## 9) Transacciones y bloqueo
 
 Patrón:
 
@@ -228,7 +228,7 @@ COMMIT;
 
 En Postgres/MariaDB puedes usar SERIALIZABLE o REPEATABLE READ según necesidad. Importante para integridad en operaciones críticas.
 
-# 10) Índices, performance y plan de ejecución
+## 10) Índices, performance y plan de ejecución
 
 Índices aceleran búsquedas por columna; cuestan en inserts/updates.
 
@@ -254,7 +254,7 @@ Normaliza para evitar duplicación; desnormaliza solo por necesidad de performan
 
 Limita JOIN innecesarios; filtra temprano (WHERE antes de agrupar).
 
-# 11) Normalización rápida (1NF, 2NF, 3NF)
+## 11) Normalización rápida (1NF, 2NF, 3NF)
 
 1NF: columnas atómicas (no listas en un campo).
 
@@ -263,7 +263,7 @@ Limita JOIN innecesarios; filtra temprano (WHERE antes de agrupar).
 3NF: eliminar dependencias transitivas; cada columna depende directamente de la PK.
 Objetivo: integridad y facilidad de consultas. En rendimiento, a veces sacrificas normalización.
 
-# 12) SQL avanzado (resumen operativo)
+## 12) SQL avanzado (resumen operativo)
 
 Window functions (OVER(), ROW_NUMBER(), RANK(), LEAD(), LAG()):
 
@@ -295,7 +295,7 @@ MySQL: más usado en web, más simple historically; InnoDB con transacciones, me
 
 Sintaxis muy similar para lo básico, divergen en features avanzadas y en tipos como SERIAL vs AUTO_INCREMENT.
 
-# 14) Plan de entrenamiento — misiones diarias (8 semanas)
+## 14) Plan de entrenamiento — misiones diarias (8 semanas)
 
 Semana 1 — Fundamentos
 
@@ -335,7 +335,7 @@ Modela una DB real, carga datos, resuelve 20 queries complejas y optimiza.
 
 Cada día: teoría 30 min, práctica 60–90 min, reto sorpresa 30 min. Sin excusas.
 
-# 15) Chuleta rápida (comandos imprescindibles)
+## 15) Chuleta rápida (comandos)
 
 SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, LIMIT
 
@@ -357,7 +357,7 @@ EXPLAIN [ANALYZE] <query>
 
 WITH <cte> AS (...)
 
-# 16) Ejercicios prácticos (con soluciones) — trabaja sin piedad
+## 16) Ejercicios prácticos (con soluciones)
 
 Ejercicio 1: listar codenames de agentes reclutados después del 2025-01-01 y que estén activos.
 Solución:
