@@ -1,3 +1,5 @@
+```sql
+
 ## 1) Objetivo y enfoque
 
 -- Objetivo:
@@ -27,9 +29,6 @@
 
 Base de Datos de Operaciones
 
-Estructura DDL (PostgreSQL / MySQL compatible)
-
-```sql
 -- Tabla agents
 CREATE TABLE agents (
   agent_id SERIAL PRIMARY KEY,      -- SERIAL en Postgres; AUTO_INCREMENT en MySQL
